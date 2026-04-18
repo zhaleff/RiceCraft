@@ -118,6 +118,8 @@ Dotfiles using the standard Hyprland stack: Waybar, AGS, eww, Wofi, Rofi, etc.
 
 - [AnanyTanwar/hyprland-dotfiles](https://github.com/AnanyTanwar/hyprland-dotfiles) — Modular Hyprland rice with a custom theme-switcher that auto-generates and applies color palettes across all apps from JSON palette definitions. <details><summary>📸 Preview</summary><br><!-- ADD IMAGE HERE: ![preview](url) --></details>
 
+- [cebem1nt/dotfiles](https://github.com/cebem1nt/dotfiles) - Dotfiles with modularity, simplicity and extensibility in mind, using waybar, swaync, and rofi. Core context menus are made with rofi. Also includes a lot of different tweaks, matching spotify theme (made with spicetify), wallpaper picker and useful scripts. Now with a light/dark theme switcher <details><summary>📸 Preview</summary><br><img width="1920" height="1080" alt="573687086-f44a8b82-fb4c-43a2-b5f6-bba86b34f110" src="https://github.com/user-attachments/assets/d2bf1cff-80d2-4d25-93e1-570e34b1356f" /><img width="1920" height="1080" alt="579651751-2342eb64-6afc-4cba-b7b4-4ef87644c829" src="https://github.com/user-attachments/assets/06962b3e-1fad-4b4b-bcd8-fe7af5abe7d9" /></details>
+
 ---
 
 ### Niri
