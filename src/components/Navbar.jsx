@@ -150,7 +150,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18 }}
-            className="fixed top-20 left-4 right-4 z-40 bg-surface-2 border border-border rounded-full md:hidden overflow-hidden"
+            className="fixed top-20 left-4 right-4 z-40 bg-surface-2 border border-border rounded-xl md:hidden overflow-hidden"
           >
             <nav className="p-3 flex flex-col gap-1">
               {navLinks.map(({ label, to }) => (
