@@ -1,63 +1,71 @@
 import { Link } from 'react-router-dom'
-import { faCode } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faCode } from '@fortawesome/free-solid-svg-icons'
 import { faGithub, faRedditAlien } from '@fortawesome/free-brands-svg-icons'
-import logo from '../assets/blacknode.png'
 
 export default function Footer() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="mt-24 border-t border-white/5 bg-[#0a0a0c] py-12">
-      <div className="max-w-7xl mx-auto px-6">
+    <footer className="border-t border-border bg-surface mt-24">
+      <div className="max-w-7xl mx-auto px-6 pt-12 pb-8">
 
-        <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
 
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="relative">
-              <img
-                src={logo}
-                alt="BlackNode"
-                className="h-9 w-auto opacity-90 group-hover:opacity-100 transition-all"
-              />
-              <div className="absolute -inset-1 bg-[#e8ff47]/10 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-all"></div>
-            </div>
-            <div className="flex flex-col">
-              <span className="text-lg font-bold tracking-wide  text-white  leading-none">
-                Awesome<span className="text-[#e8ff47]">Dotfiles</span>
-              </span>
-            </div>
-          </Link>
-
-          <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4 text-xs font-bold uppercase tracking-widest text-white/30">
-            <li><Link to="/" className="hover:text-[#e8ff47] transition-colors">Gallery</Link></li>
-            <li><Link to="/submit" className=" hover:text-[#e8ff47]">Guide</Link></li>
-            <li><Link to="/submit" className=" hover:text-[#e8ff47]">Themes</Link></li>
-            <li><Link to="/about" className=" transition-colors">About</Link></li>
-            <li><Link to="/submit" className="text-[#e8ff47]/60 hover:text-[#e8ff47]">Submit rice</Link></li>
-          </ul>
-
-        </div>
-
-        <div className="h-[1px] w-full bg-gradient-to-r from-transparent via-white/5 to-transparent mb-8"></div>
-
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4">
-            <a href="https://github.com/zhaleff/Awesome-Dotfiles" target="_blank" rel="noreferrer" className="text-white/20 hover:text-white text-xl">
-              <FontAwesomeIcon icon={faGithub} />
-            </a>
-            <a href="https://reddit.com/r/unixporn" target="_blank" rel="noreferrer" className="text-white/20 hover:text-white text-xl">
-              <FontAwesomeIcon icon={faRedditAlien} />
-            </a>
-            <a href="https://github.com/zhaleff/ad-development" target="_blank" rel="noreferrer" className="text-white/20 hover:text-white text-xl">
-              <FontAwesomeIcon icon={faCode} />
-            </a>
-            <span className="text-[10px] font-mono text-white/10 ml-2 tracking-tighter">
-              Copyright (c) {year} zhaleff. All Rights Reserved..
+          <div>
+            <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-widest text-accent border border-accent/20 bg-accent/5 px-2.5 py-1 rounded-full mb-4">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
+              OPEN SOURCE
             </span>
+            <p className="text-base font-bold tracking-tight text-text mb-2">
+              Awesome<span className="text-accent">Dotfiles</span>
+            </p>
+            <p className="text-xs text-muted leading-relaxed max-w-[200px]">
+              A curated gallery of Linux desktop setups — submitted and browsed by the community.
+            </p>
+          </div>
+
+          <div>
+            <p className="text-[10px] font-bold tracking-[0.12em] text-border mb-4">EXPLORE</p>
+            <ul className="flex flex-col gap-2.5">
+              {['Gallery', 'Themes', 'Wiki', 'About'].map(item => (
+                <li key={item}>
+                  <Link to={`/${item.toLowerCase()}`} className="text-sm text-muted hover:text-text transition-colors">
+                    {item}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <p className="text-[10px] font-bold tracking-[0.12em] text-border mb-4">CONTRIBUTE</p>
+            <ul className="flex flex-col gap-2.5">
+              <li>
+                <Link to="/submit" className="text-sm text-accent hover:text-accent/80 transition-colors">
+                  Submit your rice →
+                </Link>
+              </li>
+              {[
+                { label: 'Submission guide', to: '/guide' },
+                { label: 'GitHub repo', to: 'https://github.com/zhaleff/Awesome-Dotfiles' },
+                { label: 'r/unixporn', to: 'https://reddit.com/r/unixporn' },
+              ].map(({ label, to }) => (
+                <li key={label}>
+                  <Link to={to} className="text-sm text-muted hover:text-text transition-colors">
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
+        <div className="h-px bg-border mb-6" />
+        <div className="flex items-center justify-between">
+          <p className="text-[12px] font-mono text-border">
+            Copyright (c) {year} Zhaleff. All Rights Reserved.
+          </p>
+        </div>
+
       </div>
     </footer>
   )

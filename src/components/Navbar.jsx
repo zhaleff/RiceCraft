@@ -30,14 +30,14 @@ export default function Navbar() {
     <>
       <header className={clsx(
         'fixed top-0 left-0 right-0 z-50 border-b',
-        scrolled ? 'bg-[#0a0a0c]/90 backdrop-blur-md border-white/5' : 'bg-transparent border-transparent'
+        scrolled ? 'bg-surface-2/80 backdrop-blur-md border-white/5' : 'bg-transparent border-transparent'
       )}>
         <div className="max-w-screen-xl mx-auto px-5 sm:px-8 h-14 flex items-center gap-8">
 
           <Link to="/" className="flex items-center gap-2.5 flex-shrink-0 group">
             <img src={logo} alt="logo" className="h-6 w-auto object-contain opacity-90 group-hover:opacity-100" />
-            <span className="text-white text-[15px] tracking-tight" style={{ fontFamily: "'Lato', sans-serif" }}>
-              Awesome <span className="text-[#e8ff47]">Dotfiles</span>
+            <span className="text-text text-[15px] tracking-tight" style={{ fontFamily: "'Lato', sans-serif" }}>
+              Awesome <span className="text-accent">Dotfiles</span>
             </span>
           </Link>
 
@@ -45,7 +45,7 @@ export default function Navbar() {
             {navLinks.map(({ label, to }) => (
               <NavLink key={label} to={to} className={({ isActive }) => clsx(
                 'relative px-3.5 py-1.5 text-sm rounded-lg',
-                isActive ? 'text-white' : 'text-white/35 hover:text-white/70'
+                isActive ? 'text-text' : 'text-text/35 hover:text-text/70'
               )}>
                 {({ isActive }) => (
                   <>
@@ -66,7 +66,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3 ml-auto">
             <Link
               to="/submit"
-              className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#e8ff47] hover:bg-[#f5ff80] text-black text-sm"
+              className="flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent hover:bg-accent text-black text-sm"
               style={{ fontFamily: "'Lato', sans-serif" }}
             >
               Share your build
@@ -90,7 +90,7 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18 }}
-            className="fixed top-14 left-0 right-0 z-40 bg-[#0a0a0c] border-b border-white/5 md:hidden"
+            className="fixed top-14 left-0 right-0 z-40 bg-surface border-b border-white/5 md:hidden"
           >
             <nav className="max-w-screen-xl mx-auto px-5 py-4 flex flex-col gap-1">
               {navLinks.map(({ label, to }) => (

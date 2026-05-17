@@ -5,13 +5,13 @@
   --font-serif: 'Lato', ui-sans-serif, system-ui, sans-serif;
 
 
-  --color-accent: #e8ff47;
-  --color-surface: #050505;
-  --color-surface-2: ##1a1918;
+  --color-accent: #7EC8A4;
+  --color-surface: #0E0F11;
+  --color-surface-2: #1E2028;
   --color-surface-3: #1f1f23;
   --color-border: #2a2a2f;
   --color-muted: #71717a;
-  --color-text: #fafafa;
+  --color-text: #CDD0D6;
   --color-text-dim: #a1a1aa;
 }
 
@@ -31,10 +31,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-::selection {
-  background-color: rgba(124, 106, 247, 0.3);
-  color: #fff;
-}
+
 
 ::-webkit-scrollbar {
   width: 6px;

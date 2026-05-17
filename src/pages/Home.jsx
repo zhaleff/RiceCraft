@@ -4,7 +4,6 @@ import { motion } from 'framer-motion'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 import { supabase } from '../lib/supabase'
-import Typewriter from 'typewriter-effect'
 
 export default function Home() {
   const [total, setTotal] = useState(null)
@@ -14,7 +13,7 @@ export default function Home() {
       .from('rices')
       .select('*', { count: 'exact', head: true })
       .then(({ count }) => setTotal(count))
-      .catch(() => {})
+      .catch(() => { })
   }, [])
 
   return (
@@ -27,10 +26,6 @@ export default function Home() {
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
           <div className="flex items-center gap-3 mb-8">
-            <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#e8ff47]/10 border border-[#e8ff47]/20 text-[11px] text-[#e8ff47]">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#e8ff47] animate-pulse" />
-              Live gallery
-            </span>
             {total !== null && (
               <span className="text-xs text-white/20">{total.toLocaleString()} setups indexed</span>
             )}
@@ -38,21 +33,10 @@ export default function Home() {
 
           <div className="flex flex-col lg:flex-row lg:items-end gap-10 mb-10">
             <div className="flex-1">
-              <h1 className="text-6xl sm:text-7xl lg:text-8xl tracking-[-0.05em] leading-[0.9] text-white">
-                Built for
+              <h1 className="text-6xl sm:text-7xl lg:text-8xl tracking-[-0.05em] leading-[0.9] text-text">
+                Built for <br />
+                <span className='text-6xl sm:text-7xl lg:text-8xl tracking-[-0.05em] leading-[0.9] text-accent'>you</span>
               </h1>
-              <div className="text-6xl sm:text-7xl lg:text-8xl tracking-[-0.05em] leading-[0.9] text-[#e8ff47] mt-1">
-                <Typewriter
-                  options={{
-                    strings: ['ricers.', 'you.', 'the community.', 'dotfiles.', 'Linux.'],
-                    autoStart: true,
-                    loop: true,
-                    delay: 65,
-                    deleteSpeed: 45,
-                    cursorClassName: 'text-[#e8ff47]',
-                  }}
-                />
-              </div>
             </div>
             <p className="text-base text-white/35 max-w-sm leading-relaxed lg:mb-2">
               The central hub for Linux desktop configurations. Discover setups, color palettes, and dotfiles from the community.
@@ -60,7 +44,7 @@ export default function Home() {
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <Link to="/gallery" className="flex items-center gap-2 px-6 py-3 rounded-full bg-[#e8ff47] hover:bg-white text-black text-sm">
+            <Link to="/gallery" className="flex items-center gap-2 px-6 py-3 rounded-full bg-accent hover:bg-white text-black text-sm">
               Browse gallery
               <FontAwesomeIcon icon={faArrowRight} className="w-3.5 h-3.5" />
             </Link>
@@ -89,7 +73,7 @@ export default function Home() {
             { num: '03', title: 'Discover', desc: 'Browse, filter, and vote on setups from the community.' },
           ].map(({ num, title, desc }) => (
             <div key={num} className="bg-[#0e0e10] p-8 flex flex-col gap-3">
-              <span className="text-[11px] font-mono text-[#e8ff47]/40">{num}</span>
+              <span className="text-[11px] font-mono text-accent">{num}</span>
               <p className="text-sm text-white">{title}</p>
               <p className="text-xs text-white/30 leading-relaxed">{desc}</p>
             </div>
@@ -98,7 +82,7 @@ export default function Home() {
 
         <div className="flex items-center justify-between mb-8">
           <p className="text-sm text-white/40">Recent submissions</p>
-          <Link to="/gallery" className="text-xs text-white/25 hover:text-[#e8ff47]">
+          <Link to="/gallery" className="text-xs text-white/25 hover:text-accent">
             View all →
           </Link>
         </div>
@@ -121,7 +105,7 @@ function RecentPreviews() {
       .order('created_at', { ascending: false })
       .limit(6)
       .then(({ data }) => setRices(data ?? []))
-      .catch(() => {})
+      .catch(() => { })
   }, [])
 
   if (!rices.length) return (
