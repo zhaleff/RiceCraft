@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark, faArrowRight, faArrowLeft, faCircleNotch, faCloudArrowUp } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { supabase } from '../lib/supabase'
-import { uploadImage } from '../lib/uploadcare'
+import { uploadImage } from '../lib/imgbb'
 import clsx from 'clsx'
 
 const WM_OPTIONS = ['Hyprland', 'Niri', 'i3', 'Sway', 'MangoWM', 'bspwm', 'dwm', 'Omarchy', 'Qtile', 'AwesomeWM', 'XFCE', 'KDE', 'GNOME', 'Other']
@@ -350,3 +350,4 @@ export default function Submit() {
     </div>
   )
 }
+
