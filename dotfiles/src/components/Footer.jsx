@@ -13,10 +13,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
 
           <div>
-            <span className="inline-flex items-center gap-1.5 text-[10px] font-bold tracking-widest text-accent border border-accent/20 bg-accent/5 px-2.5 py-1 rounded-full mb-4">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent" />
-              OPEN SOURCE
-            </span>
+
             <p className="text-base font-bold tracking-tight text-text mb-2">
               Awesome<span className="text-accent">Dotfiles</span>
             </p>
